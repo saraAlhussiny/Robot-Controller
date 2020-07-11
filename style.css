@@ -1,0 +1,162 @@
+
+	body{
+	background:#263B4D;
+} 
+
+#title{
+     color:#E1EBF8; 
+	 font-family:Optima; 
+	 font-size:300%;
+	 display: inline;
+
+}
+
+.container{
+	text-align:center;
+	max-width:1450px;
+	margin:0 auto;
+	padding:0.1px 10px;
+	float: center;
+}
+
+svg{
+	position:relative;
+}
+
+.triangle{
+	transition:left .3s ease-in-out, fill .3s ease-in-out, stroke-dasharray .2s ease;
+	position:relative;
+	stroke-dasharray: 125 61;
+   stroke-dashoffset: 25;
+}
+
+svg:hover .triangle{
+	stroke-dasharray: 188 0;
+}
+
+.triangle:hover{
+	fill:rgba(255,255,255,.05);
+}
+
+.triangle:active{
+	fill:rgba(255,255,255,.18);
+}
+
+.glitch {
+  -webkit-animation: glitch 0.2s 2;
+	animation: glitch 0.15s 2;
+}
+
+.glitchout{
+	-webkit-animation: glitchout 0.2s 2;
+	animation: glitchout 0.15s 2;
+}
+
+svg .text{
+	opacity:1;
+	transition:opacity .3s ease-in-out;
+}
+
+}
+svg:hover .text{
+	opacity:0;
+}
+
+svg .text2{
+	opacity:0;
+	transition:opacity .3s ease-in-out;
+}
+
+svg:hover .text2{
+	opacity:1;
+}
+
+
+/*----------------------------------------------------------------*/
+
+
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-slot {
+  transform: translate(8.75em, 4.75em);  
+  position: relative;
+  height: 2.2em;
+  width: 6em;
+  border: 4px solid #e4e7ec;
+  border-radius: 10em;
+  background-color: white;
+  box-shadow: 0px 10px 25px #e4e7ec;
+  transition: background-color 250ms;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
+}
+
+.toggle-button {
+  transform: translate(3.75em, 0.24em);
+  position: absolute;
+  height: 1.7em;
+  width: 1.7em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 0.35em #ffbb52;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 0.35em white;
+  transform: translate(0.7em, 0.24em);
+}
+
+.sun-icon {
+  position: absolute;
+  height: 1.7em;
+  width: 1.7em;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 1.7em;
+  width: 1.7em;
+  opacity: 1;
+  transform: translate(0.67em, 0.24em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(0.67em, 0.24em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 1.7em;
+  width: 1.7em;
+  color: white;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 1.7em;
+  width: 1.7em;
+  opacity: 0;
+  transform: translate(3.75em, 0.24em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(3.75em, 0.24em) rotate(-15deg);
+}
